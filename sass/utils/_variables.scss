@@ -1,0 +1,21 @@
+$colour-primary: #9356DC;
+$colour-secondary: #FF79DA;
+$colour-tertiary: #99E2D0;
+$background-light : #F2F2F2;
+
+$fonts: (
+    logo: "Shrikhand",
+    title: "Shrikhand",
+    text: 'Roboto',
+);
+
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400,
+);
+
+$linear-gradient: linear-gradient(180deg, $colour-secondary, $colour-primary);
