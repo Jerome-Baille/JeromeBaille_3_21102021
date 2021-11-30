@@ -22,21 +22,23 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="./index.html"><h1 class="header__logo">ohmyfood</h1></a>
+        <a href="./index.html">
+            <h1 class="header__logo">ohmyfood</h1>
+        </a>
     </header>
     <!-- End of Header -->
 
     <!-- Main -->
     <main>
-        <!-- Introduction section -->
-        <section class="localisation">
+        <!-- Introduction section -->  
+        <form class="localisation" action=".">
             <i class="fas fa-map-marker-alt localisation__logo"></i>
-            <p class="localisation__text">Paris, Belleville</p>
-        </section>
+            <input class="localisation__text" type="search" id="citySearch" name="citySearch" placeholder="Paris, Belleville" aria-label="Entrez le nom de la ville recherchée ici" disabled>
+        </form>
 
         <section class="description">
-            <h1>Réservez le menu qui vous convient</h1>
-            <h3>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h3>
+            <h2>Réservez le menu qui vous convient</h2>
+            <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
             <a class="btn" href="#restaurants">Explorer nos restaurants</a>
         </section>
 
@@ -81,10 +83,10 @@
                         <h3>La palette du goût</h3>
                         <p>Ménilmontant</p>
                     </div>
-                    <div class="btn-like">
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-heart"></i>
-                    </div>
+                    <button class="btn__heart">
+                        <i class="far fa-heart white-bg"></i>
+                        <i class="fas fa-heart white-bg"></i>
+                    </button>
                 </div>
             </a>
             <!-- End of the card for La palette du goût -->
@@ -98,10 +100,10 @@
                         <h3>La note enchantée</h3>
                         <p>Charonne</p>
                     </div>
-                    <div class="btn-like">
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-heart"></i>
-                    </div>
+                    <button class="btn__heart">
+                        <i class="far fa-heart white-bg"></i>
+                        <i class="fas fa-heart white-bg"></i>
+                    </button>
                 </div>
             </a>
             <!-- End of the card for La note enchantée -->
@@ -115,10 +117,10 @@
                     <h3>À la française</h3>
                     <p>Cité Rouge</p>
                 </div>
-                <div class="btn-like">
-                    <i class="far fa-heart"></i>
-                    <i class="fas fa-heart"></i>
-                </div>
+                <button class="btn__heart">
+                    <i class="far fa-heart white-bg"></i>
+                    <i class="fas fa-heart white-bg"></i>
+                </button>
             </div>
             </a>
             <!-- End of the card for À la française -->
@@ -132,10 +134,10 @@
                     <h3>Le délice des sens</h3>
                     <p>Folie-Méricourt</p>
                 </div>
-                <div class="btn-like">
-                    <i class="far fa-heart"></i>
-                    <i class="fas fa-heart"></i>
-                </div>
+                <button class="btn__heart">
+                    <i class="far fa-heart white-bg"></i>
+                    <i class="fas fa-heart white-bg"></i>
+                </button>
             </div>
             </a>
             <!-- End of the card for Le délice des sens -->
@@ -146,7 +148,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <span class="footer__logo">OhMyFood</span>
+        <span class="footer__logo">ohmyfood</span>
         <ul>
             <li>
             <a href="#"><i class="fas fa-utensils footer__icon"></i>Proposer un restaurant</a>
@@ -158,7 +160,7 @@
             <a href="#">Mentions légales</a>
             </li>
             <li>
-            <a href="mailto:contact@ohmyfood.com">Contact</a>
+            <a href="mailto:contact@ohmyfood.fr">Contact</a>
             </li>
         </ul>
     </footer>
