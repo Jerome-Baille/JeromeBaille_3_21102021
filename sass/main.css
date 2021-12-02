@@ -1,0 +1,810 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+/* Utils */
+@-webkit-keyframes menu-translate {
+  /* When the page is loaded, the dishes appear with a slight delay in time */
+  from {
+    -webkit-transform: translateY(30%);
+            transform: translateY(30%);
+    opacity: 0%;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 100%;
+  }
+}
+@keyframes menu-translate {
+  /* When the page is loaded, the dishes appear with a slight delay in time */
+  from {
+    -webkit-transform: translateY(30%);
+            transform: translateY(30%);
+    opacity: 0%;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 100%;
+  }
+}
+
+/*
+Loading spinner
+*/
+@-webkit-keyframes opacity-loading {
+  /* The 'loading spinner' partially hides the content of the page when displayed */
+  to {
+    opacity: 0;
+    z-index: -9999;
+  }
+}
+@keyframes opacity-loading {
+  /* The 'loading spinner' partially hides the content of the page when displayed */
+  to {
+    opacity: 0;
+    z-index: -9999;
+  }
+}
+
+@-webkit-keyframes spin {
+  /* Makes the circle inside the 'loading spinner' spin */
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  /* Makes the circle inside the 'loading spinner' spin */
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/*
+Heart button
+*/
+@-webkit-keyframes heart-filled-opacity {
+  /* Fill the heart on hover */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes heart-filled-opacity {
+  /* Fill the heart on hover */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes heart-outline-opacity {
+  /* Hide the outline on hover */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes heart-outline-opacity {
+  /* Hide the outline on hover */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Media queries */
+/* Base */
+* {
+  font-family: "Roboto";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Components */
+.btn {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 1.5rem 4rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  border-radius: 10rem;
+  color: white;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(to top left, #9356DC, #FF79DA);
+  cursor: pointer;
+  -webkit-box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#a16be0), to(#ff93e1));
+  background-image: linear-gradient(to top left, #a16be0, #ff93e1);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.btn__heart {
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  position: relative;
+  background-color: black;
+  font-size: 2rem;
+  padding: 1rem;
+  z-index: 99;
+}
+
+.btn__heart--whiteBg {
+  background-color: white !important;
+}
+
+.btn__heart i {
+  background-color: #f6f6f6;
+  mix-blend-mode: lighten;
+  position: absolute;
+}
+
+.btn__heart:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  content: "";
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(to top left, #9356DC, #FF79DA);
+}
+
+.btn__heart:hover:before {
+  -webkit-animation: heart-filled-opacity 0.8s cubic-bezier(0.1, -0.6, 0.2, 0) both;
+          animation: heart-filled-opacity 0.8s cubic-bezier(0.1, -0.6, 0.2, 0) both;
+}
+
+.btn__heart:hover .far {
+  -webkit-animation: heart-outline-opacity 0.8s cubic-bezier(0.1, -0.6, 0.2, 0) both;
+          animation: heart-outline-opacity 0.8s cubic-bezier(0.1, -0.6, 0.2, 0) both;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card:hover {
+  /* Increase the shaddow of the card on hover */
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.card__new {
+  background-color: #99E2D0;
+  color: #278870;
+  padding: 0.5rem 1rem;
+  border-radius: 0.125rem;
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+  font-weight: bold;
+}
+
+.card__new--disable {
+  display: none;
+}
+
+.card img {
+  width: 100%;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card__caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.card__caption__text {
+  width: 100%;
+}
+
+.card__caption__text h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__caption__text > p {
+  font-size: 1.25rem;
+  margin: 0.25rem 0;
+}
+
+.card__caption__text div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 1rem;
+}
+
+.card__caption__text div p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__caption__text div span {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+.loading-spinner {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  inset: 0;
+  background-color: white;
+  z-index: 9999;
+  opacity: 0.9;
+  -webkit-animation: opacity-loading 0.5s 1.5s forwards;
+          animation: opacity-loading 0.5s 1.5s forwards;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.loading-spinner__circle {
+  height: 3rem;
+  width: 3rem;
+  margin: auto;
+  border-top: 0.2rem solid #9356DC;
+  border-right: 0.2rem solid #FF79DA;
+  border-bottom: 0.2rem solid #9356DC;
+  border-left: 0.2rem solid #99E2D0;
+  border-radius: 100%;
+  -webkit-animation: spin 1.5s infinite linear;
+          animation: spin 1.5s infinite linear;
+}
+
+.loading-spinner__text {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  color: #595959;
+  font-weight: normal;
+}
+
+/* Layouts */
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .grid-container {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .grid-container {
+    -ms-grid-columns: (minmax(0, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 2rem;
+}
+
+.footer__logo {
+  font-family: "Shrikhand", "cursive";
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 1rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer ul a:hover {
+  opacity: 0.5;
+}
+
+.footer__icon {
+  font-size: 1rem;
+  padding-right: 1rem;
+}
+
+.localisation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #e5e5e5;
+}
+
+.localisation__logo {
+  padding-right: 1.5rem;
+}
+
+.localisation__text, .localisation__text::-webkit-input-placeholder, .localisation__text:focus {
+  font-weight: bold;
+  font-family: "Roboto";
+  border-style: none;
+  outline: none;
+  padding: 1rem 0;
+  width: 12rem;
+  background-color: inherit;
+  color: #4d4d4d;
+  text-transform: capitalize;
+}
+
+.localisation__text, .localisation__text:-ms-input-placeholder, .localisation__text:focus {
+  font-weight: bold;
+  font-family: "Roboto";
+  border-style: none;
+  outline: none;
+  padding: 1rem 0;
+  width: 12rem;
+  background-color: inherit;
+  color: #4d4d4d;
+  text-transform: capitalize;
+}
+
+.localisation__text, .localisation__text::-ms-input-placeholder, .localisation__text:focus {
+  font-weight: bold;
+  font-family: "Roboto";
+  border-style: none;
+  outline: none;
+  padding: 1rem 0;
+  width: 12rem;
+  background-color: inherit;
+  color: #4d4d4d;
+  text-transform: capitalize;
+}
+
+.localisation__text, .localisation__text::placeholder, .localisation__text:focus {
+  font-weight: bold;
+  font-family: "Roboto";
+  border-style: none;
+  outline: none;
+  padding: 1rem 0;
+  width: 12rem;
+  background-color: inherit;
+  color: #4d4d4d;
+  text-transform: capitalize;
+}
+
+.header {
+  padding: 1rem;
+  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1000;
+}
+
+.header__logo {
+  font-family: "Shrikhand";
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.header__arrow {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+/* Pages */
+.description {
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.description h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.description p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  padding-bottom: 1rem;
+}
+
+.howTo {
+  padding: 2rem 1rem;
+}
+
+.howTo h2 {
+  font-size: 2rem;
+}
+
+.howTo__list {
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  list-style: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .howTo__list {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .howTo__list {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.howTo__list__element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.howTo__list__element__number {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 0.75rem;
+  margin: auto;
+  margin-right: -1rem;
+  z-index: 1000;
+  font-size: 1rem;
+  line-height: 1rem;
+  background-color: #9356DC;
+  color: white;
+}
+
+.howTo__list__element__content {
+  width: 100%;
+  border: 0;
+  padding: 1.5rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.howTo__list__element__content:hover {
+  background-color: #f2eafb;
+  cursor: default;
+}
+
+.howTo__list__element__content:hover i {
+  color: #9356DC;
+}
+
+.howTo__list__element__content i {
+  padding-left: 1rem;
+  color: gray;
+}
+
+.howTo__list__element__content span {
+  padding: 0 1rem;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 2rem 1rem 5rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.restaurants h2 {
+  font-size: 2rem;
+}
+
+.restaurants__grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  row-gap: 2rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .restaurants__grid-container {
+    -ms-grid-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.menu {
+  background-color: #f6f6f6;
+  border-radius: 50px 50px 0 0;
+  margin-top: -6rem;
+  z-index: 1000;
+  position: relative;
+  padding: 1.5rem;
+}
+
+.menu > div:last-child {
+  /* adds padding to the last div of menu (the 'order' button */
+  padding: 2.5rem 0;
+}
+
+.menu__img {
+  /* Container of the image */
+  width: 100%;
+  height: 25rem;
+}
+
+.menu__img img {
+  /* Image of a dish from the restaurant */
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.menu__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 2rem;
+}
+
+.menu__header h2 {
+  font-family: "Shrikhand";
+  font-size: 1.75rem;
+}
+
+.menu__course > div:nth-of-type(1) {
+  -webkit-animation: menu-translate 1s 0.2s backwards;
+          animation: menu-translate 1s 0.2s backwards;
+}
+
+.menu__course > div:nth-of-type(2) {
+  -webkit-animation: menu-translate 1s 0.4s backwards;
+          animation: menu-translate 1s 0.4s backwards;
+}
+
+.menu__course > div:nth-of-type(3) {
+  -webkit-animation: menu-translate 1s 0.6s backwards;
+          animation: menu-translate 1s 0.6s backwards;
+}
+
+.menu__course > div:nth-of-type(4) {
+  -webkit-animation: menu-translate 1s 0.8s backwards;
+          animation: menu-translate 1s 0.8s backwards;
+}
+
+.menu__course__subtitle {
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.menu__course__subtitle::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.menu__course .card__caption .check-box {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  background-color: #99E2D0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.menu__course .card__caption .check-box .fa-check-circle {
+  font-size: 1.75rem;
+  color: white;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.menu__course .card__caption:hover .check-box {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.menu__course .card__caption:hover .check-box .fa-check-circle {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.menu__course .card__caption:hover .card__caption__text {
+  width: 80%;
+  padding-right: 1rem;
+}
+
+.menu__course .card__caption .card__caption__text {
+  width: 100%;
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
+}
+/*# sourceMappingURL=main.css.map */

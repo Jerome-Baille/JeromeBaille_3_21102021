@@ -1,0 +1,19 @@
+.header {
+    padding: 1rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1000;
+    &__logo {
+        @include fonts(logo-title);
+        font-size: 2rem;
+        text-align: center;
+        margin: 0;
+    }
+    &__arrow {
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+    }
+}

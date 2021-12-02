@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prefixed/style.css">
 
      <!-- Font awesome script -->
      <script src="https://kit.fontawesome.com/888b7e9c5e.js" crossorigin="anonymous"></script>
@@ -26,12 +26,12 @@
 
     <!-- Main -->
     <main>
-        <div class="menu-img">
-            <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant Le délice des sens">
+        <div class="menu__img">
+            <img src="./images/restaurants/large/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant Le délice des sens">
         </div>
         
 
-        <section class="menu-detail">
+        <section class="menu main-container">
             <header class="menu__header">
                 <h2>Le délice des sens</h2>
                 <button class="btn__heart">
@@ -40,109 +40,111 @@
                 </button>
             </header>
 
-            <div id="starters" class="menu">
-                <h3 class="menu__subtitle">Entrées</h3>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Tartare de thon</h3>
-                        <div>
-                            <p>Assaisonné au yuzu</p>
-                            <span>25€</span>
+            <div class="grid-container">
+                <div id="starters" class="menu__course">
+                    <h3 class="menu__course__subtitle">Entrées</h3>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Tartare de thon</h3>
+                            <div>
+                                <p>Assaisonné au yuzu</p>
+                                <span>25€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>
                         </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Bouchée de homard croustillant </h3>
+                            <div>
+                                <p>Et sa farandole de petits légumes</p>
+                                <span>35€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                        </div>
+                    </div>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Velouté de cèpes</h3>
+                            <div>
+                                <p>Aux truffes</p>  
+                                <span>20€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                        </div>
                     </div>
                 </div>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Bouchée de homard croustillant </h3>
-                        <div>
-                            <p>Et sa farandole de petits légumes</p>
-                            <span>35€</span>
+    
+                <div id="mainCourse" class="menu__course">
+                    <h3 class="menu__course__subtitle">Plats</h3>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Poulet rôti aux herbes de Provence</h3>
+                            <div>
+                                <p>Et sa crème de truffe</p> 
+                                <span>40€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div> 
                         </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Langouste rôtie</h3>
+                            <div>
+                                <p>Et ses légumes de saison</p>
+                                <span>35€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                        </div>
+                    </div>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Côte de boeuf Angus</h3>
+                            <div>
+                                <p>Et sa purée de panais</p>
+                                <span>44€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                        </div>
                     </div>
                 </div>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Velouté de cèpes</h3>
-                        <div>
-                            <p>Aux truffes</p>  
-                            <span>20€</span>
+                
+                <div id="dessert" class="menu__course">
+                    <h3 class="menu__course__subtitle">Desserts</h3>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Farandole de desserts</h3>
+                            <div>
+                                <p>Du chef</p>
+                                <span>18€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>
                         </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Crème brulée</h3>
+                            <div>
+                                <p>Revisité</p>
+                                <span>22€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>   
+                        </div>
+                    </div>
+                    <div class="card card__caption">
+                        <div class="card__caption__text">
+                            <h3>Tiramisu</h3>
+                            <div>
+                                <p>À la noisette</p>
+                                <span>23€</span>
+                            </div>
+                            <div class="check-box"><i class="fas fa-check-circle"></i></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div id="mainCourse" class="menu">
-                <h3 class="menu__subtitle">Plats</h3>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Poulet rôti aux herbes de Provence</h3>
-                        <div>
-                            <p>Et sa crème de truffe</p> 
-                            <span>40€</span>
-                        </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div> 
-                    </div>
-                </div>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Langouste rôtie</h3>
-                        <div>
-                            <p>Et ses légumes de saison</p>
-                            <span>35€</span>
-                        </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Côte de boeuf Angus</h3>
-                        <div>
-                            <p>Et sa purée de panais</p>
-                            <span>44€</span>
-                        </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="dessert" class="menu">
-                <h3 class="menu__subtitle">Desserts</h3>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Farandole de desserts</h3>
-                        <div>
-                            <p>Du chef</p>
-                            <span>18€</span>
-                        </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Crème brulée</h3>
-                        <div>
-                            <p>Revisité</p>
-                            <span>22€</span>
-                        </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>   
-                    </div>
-                </div>
-                <div class="card card__caption">
-                    <div class="card__caption__text">
-                        <h3>Tiramisu</h3>
-                        <div>
-                            <p>À la noisette</p>
-                            <span>23€</span>
-                        </div>
-                        <div class="check-box"><i class="fas fa-check-circle"></i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container__btn">
+            <div class="main-container">
                 <a class="btn" href="#">Commander</a>
             </div>
             
@@ -151,21 +153,23 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <span class="footer__logo">ohmyfood</span>
-        <ul>
-            <li>
-            <a href="#"><i class="fas fa-utensils footer__icon"></i>Proposer un restaurant</a>
-            </li>
-            <li>
-            <a href="#"><i class="fas fa-hands-helping footer__icon"></i>Devenir partenaire</a>
-            </li>
-            <li>
-            <a href="#">Mentions légales</a>
-            </li>
-            <li>
-            <a href="mailto:contact@ohmyfood.fr">Contact</a>
-            </li>
-        </ul>
+        <div class="main-container">
+            <span class="footer__logo">ohmyfood</span>
+            <ul>
+                <li>
+                <a href="#"><i class="fas fa-utensils footer__icon"></i>Proposer un restaurant</a>
+                </li>
+                <li>
+                <a href="#"><i class="fas fa-hands-helping footer__icon"></i>Devenir partenaire</a>
+                </li>
+                <li>
+                <a href="#">Mentions légales</a>
+                </li>
+                <li>
+                <a href="mailto:contact@ohmyfood.fr">Contact</a>
+                </li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>

@@ -1,16 +1,15 @@
 .btn {
     margin: auto;
+    @include flex-center;
+    max-width: fit-content;
     padding: 1.5rem 4rem;
     font-weight: 600;
     font-size: 1.1rem;
     line-height: 1.1rem;
-    text-align: center;
     border-radius: 10rem;
     color: white;
-    background-color: rgb(104, 104, 104);
     background-image: linear-gradient(to top left, $colour-primary, $colour-secondary);
     cursor: pointer;
-    transition-duration: 0.25s;
     box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
     &:hover{
         background-image: linear-gradient(to top left, lighten($color: $colour-primary, $amount: 5%), lighten($color: $colour-secondary, $amount: 5%));
@@ -20,21 +19,20 @@
         height: 2rem;
         width: 2rem;
         border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
         cursor: pointer;
         position: relative;
         background-color: black;
         font-size: 2rem;
         padding: 1rem;
+        z-index: 99;
+        &--whiteBg{
+            background-color: white !important;
+        }
         & i {
             background-color : $background-light;
             mix-blend-mode: lighten;
             position: absolute;
-        }
-        &:hover:before {
-            opacity: 1;
         }
         &:before {
             position: absolute;
@@ -47,13 +45,11 @@
             content: "";
             background-image: linear-gradient(to top left, $colour-primary, $colour-secondary);
         }
-    
+        &:hover:before {
+            animation: heart-filled-opacity 0.8s cubic-bezier(0.1, -0.6, 0.2, 0) both;
+        }
         &:hover .far {
-            opacity: 0;
+            animation: heart-outline-opacity 0.8s cubic-bezier(0.1, -0.6, 0.2, 0) both;
         }
     }
-}
-
-.white-bg {
-    background-color: white !important;
 }

@@ -1,58 +1,37 @@
-@keyframes menu {
-    0% {
+@keyframes menu-translate { /* When the page is loaded, the dishes appear with a slight delay in time */
+    from {
         transform: translateY(30%);
         opacity: 0%;
     }
-    100% {
+    to {
         transform: translateY(0%);
         opacity:100%;
     }
 }
 
-.menu {
-        @for $i from 1 through 4 {
-            &>div:nth-of-type(#{$i}){
-            animation: menu 1s 0s+0.2s*$i backwards;
-            }
-        }
+/*
+Loading spinner
+*/
+@keyframes opacity-loading { /* The 'loading spinner' partially hides the content of the page when displayed */
+    to {
+        opacity:0;
+        z-index: -9999;
+    }
 }
 
-.menu {
-    & .card__caption{        
-        & .check-box {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            right: 0;
-            top:0;
-            height: 100%;
-            width: 20%;
-            background-color: $colour-tertiary;
-            transform: translateX(100%);
-            transition: transform 0.2s;
-            & .fa-check-circle {
-                font-size: 1.75rem;
-                color: white;
-                transform: rotate(0);
-                transition: transform 0.5s ;
-            }
-        }
-        &:hover {
-            & .check-box {
-                transform: translateX(0%);
-                & .fa-check-circle{
-                    transform: rotate(360deg);
-                }
-            }
-            & .card__caption__text {
-                width: 80%;
-                padding-right: 1rem;
-            }
-        }
-        .card__caption__text {
-            width: 100%;
-            transition: width 0.2s;
-        }
-    }
+@keyframes spin { /* Makes the circle inside the 'loading spinner' spin */
+    to {transform: rotate(360deg);}
+}
+
+/*
+Heart button
+*/
+@keyframes heart-filled-opacity{ /* Fill the heart on hover */
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+@keyframes heart-outline-opacity { /* Hide the outline on hover */
+    from { opacity: 1;}
+    to { opacity: 0;}
 }
