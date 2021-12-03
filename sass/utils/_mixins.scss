@@ -1,4 +1,4 @@
-/* Media queries */
+/* Media queries to set the breakpoints */
 @mixin mobile {
     @media screen and (max-width: 768px) {
       @content;
@@ -17,12 +17,22 @@
     }
   }
 
+/* Mixin to set the fonts faster */
 @mixin fonts($fontName) {
   font-family: map-get($fonts, $fontName)
 }
 
+
+/* Set flex and center the content */
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Used to troncate the text of the courses items on the menu pages */
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

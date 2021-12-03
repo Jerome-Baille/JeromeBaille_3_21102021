@@ -24,11 +24,10 @@
         padding-right: 2rem;
         & h2 {
             @include fonts(logo-title);
-            font-size: 1.75rem;
         }
     }
     &__course {
-        @for $i from 1 through 4 {
+        @for $i from 1 through 4 { /* Increase the delay by 0.2s on each element so that they appear one after the other */
             &>div:nth-of-type(#{$i}){
             animation: menu-translate 1s 0s+0.2s*$i backwards;
             }
@@ -38,7 +37,7 @@
             position: relative;
             padding-bottom: 0.5rem;
             font-weight: normal;
-            &::after{
+            &::after{ /* Underlines a certain part of the subtitle */
                 content: "";
                 width: 3rem;
                 height: 0.25rem;
@@ -51,15 +50,13 @@
         & .card__caption{        
             & .check-box {
                 position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-center;
                 right: 0;
                 top:0;
                 height: 100%;
                 width: 20%;
                 background-color: $colour-tertiary;
-                transform: translateX(100%);
+                transform: translateX(100%); /* the check-box is hidden next to the card */
                 transition: transform 0.2s;
                 & .fa-check-circle {
                     font-size: 1.75rem;
@@ -70,13 +67,13 @@
             }
             &:hover {
                 & .check-box {
-                    transform: translateX(0%);
+                    transform: translateX(0%); /* On hover the check-box slides to be revealed */
                     & .fa-check-circle{
-                        transform: rotate(360deg);
+                        transform: rotate(360deg); /* Makes the check sign spin */
                     }
                 }
                 & .card__caption__text {
-                    width: 80%;
+                    width: 80%; /* Reduce the size of the text section to provide space for the check-box */
                     padding-right: 1rem;
                 }
             }
