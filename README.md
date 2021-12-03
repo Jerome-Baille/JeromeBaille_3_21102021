@@ -49,3 +49,7 @@ Les effets accessibles au clic ou au survol sont visibles sur la maquette. Ils d
 1. Primaire: #9356DC
 2. Secondaire: #FF79DA
 3. Tertiaire: #99E2D0
+
+---
+
+Pour tester le site internet vous pouvez vous rendre à cette adresse : [OhMyFood](https://jerome-baille.github.io/JeromeBaille_3_21102021/index.html)
